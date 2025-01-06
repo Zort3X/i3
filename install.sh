@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACMAN_PACKAGES=(
-  "alacritty" "i3-wm" "base-devel" "btop" "file-roller" "nano" "neofetch" "pulsemixer" "steam" "thunar" "polybar" "rofi" "plymouth" "feh"
+  "alacritty" "base-devel" "btop" "file-roller" "nano" "neofetch" "pulsemixer" "steam" "thunar" "polybar" "rofi" "plymouth" "feh"
 )
 
 PARU_PACKAGES=(
@@ -29,10 +29,13 @@ paru -Sy --noconfirm "${PARU_PACKAGES[@]}"
 
 # === Step 6: Clone and copy dotfiles ===
 sudo cp -r ~/i3/.config ~
+sudo cp -r ~/i3/.Xresources ~
+xrdb -merge ~/.Xresources
 gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Green-Dark'
 gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 gsettings set org.gnome.desktop.interface font-name 'SourceCodePro 11'
+sudo chmod +x ~/.config/lang_tog.sh
 sudo chmod a+wr /opt/spotify
 sudo chmod a+wr /opt/spotify/Apps -R
 spicetify update
