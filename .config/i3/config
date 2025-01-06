@@ -6,11 +6,12 @@ exec_always killall polybar
 exec_always --no-startup-id bash ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id xrandr --output eDP --mode 1920x1080
 exec_always --no-startup-id picom 
+exec_always --no-startup-id i3-auto-tiling
 
 gaps inner 15
 gaps outer 5
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 font pango:SourceCodePro 14
 
