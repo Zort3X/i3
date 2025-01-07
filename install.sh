@@ -44,5 +44,3 @@ spicetify update
 sudo pacman -Rns $(pacman -Qdtq) --noconfirm
 sudo pacman -Scc --noconfirm
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" 
-cp -f ~/i3/.bashrc ~ 
-reboot
