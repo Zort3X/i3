@@ -1,11 +1,11 @@
 #!/bin/bash
 
 PACMAN_PACKAGES=(
-  "alacritty" "base-devel" "btop" "file-roller" "nano" "neofetch" "pulsemixer" "steam" "thunar" "polybar" "rofi" "plymouth" "feh"
+  "alacritty" "base-devel" "btop" "file-roller" "nano" "neofetch" "pulsemixer" "steam" "thunar" "polybar" "rofi" "plymouth" "feh" "ttf-sourcecodepro-nerd"
 )
 
 PARU_PACKAGES=(
-  "bibata-cursor-theme-bin" "google-chrome" "gruvbox-gtk-theme-git" "gruvbox-icon-theme-git" "spicetify-cli" "spotify" "vesktop-bin" "plymouth-theme-loader-2-git" "ttf-adobe-source-code-pro-fonts" "i3-rounded-border-patch-git" "i3-auto-tiling" "picom-simpleanims-next-git"
+  "bibata-cursor-theme-bin" "google-chrome" "gruvbox-gtk-theme-git" "gruvbox-icon-theme-git" "spicetify-cli" "spotify" "vesktop-bin" "plymouth-theme-loader-2-git" "i3-rounded-border-patch-git" "i3-auto-tiling" "picom-simpleanims-next-git"
 )
 
 
