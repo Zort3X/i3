@@ -5,7 +5,7 @@ PACMAN_PACKAGES=(
 )
 
 PARU_PACKAGES=(
-  "bibata-cursor-theme-bin" "google-chrome" "gruvbox-gtk-theme-git" "gruvbox-icon-theme-git" "spicetify-cli" "spotify" "vesktop-bin" "plymouth-theme-loader-2-git" "i3-rounded-border-patch-git" "i3-auto-tiling" "picom-simpleanims-next-git" "gscreenshot"
+  "pod2man" "bibata-cursor-theme-bin" "google-chrome" "gruvbox-gtk-theme-git" "gruvbox-icon-theme-git" "spicetify-cli" "spotify" "vesktop-bin" "plymouth-theme-loader-2-git" "i3-rounded-border-patch-git" "i3-auto-tiling" "picom-simpleanims-next-git" "gscreenshot"
 )
 
 
