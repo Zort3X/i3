@@ -44,5 +44,5 @@ spicetify update
 
 # === Step 7: Final cleanup ===
 sudo pacman -Rns $(pacman -Qdtq) --noconfirm
-sudo pacman -Scc --noconfirm
+sudo pacman -Sc --noconfirm
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" 
