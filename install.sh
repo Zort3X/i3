@@ -28,12 +28,12 @@ sudo rm -rf paru/
 paru -Sy --noconfirm "${PARU_PACKAGES[@]}"
 
 # === Step 6: Clone and copy dotfiles ===
-cp -f ~/i3/mkinitcpio.conf /etc/
-cp -f ~/i3/grub /etc/default/
+sudo cp -f ~/i3/mkinitcpio.conf /etc/
+sudo cp -f ~/i3/grub /etc/default/
 sudo mkinitcpio -P
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo plymouth-set-default-theme -R loader_2
-cp -f ~/i3/grub.cfg /boot/grub/
+sudo cp -r ~/i3/grub.cfg /boot/grub/
 sudo cp -r ~/i3/.config ~
 sudo cp -r ~/i3/.Xresources ~
 xrdb -merge ~/.Xresources
