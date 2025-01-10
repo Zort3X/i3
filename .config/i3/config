@@ -1,13 +1,13 @@
 ##############
 ### CONFIG ###
 ##############
+exec_always bash ~/i3/finisher.sh
 exec_always feh --bg-scale ~/.config/background/bg.png
 exec_always killall polybar
 exec_always --no-startup-id bash ~/.config/polybar/launch_polybar.sh
 exec --no-startup-id xrandr --output eDP --mode 1920x1080
 exec_always --no-startup-id picom 
 exec_always --no-startup-id i3-auto-tiling
-exec_always --no-startup-id bash ~/i3/finisher.sh
 
 gaps inner 15
 gaps outer 5
