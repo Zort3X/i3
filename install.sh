@@ -31,8 +31,8 @@ PARU_PACKAGES=(
 
 I3_DIR="$HOME/i3"
 CONFIG_DIR="$HOME/.config"
-GRUB_CONFIG="/boot/grub/grub.cfg"
 OH_MY_BASH_INSTALL_URL="https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh"
+cd ~
 
 # === Functions ===
 handle_error() {
@@ -42,6 +42,7 @@ handle_error() {
 
 install_pacman_packages() {
   echo "Installing pacman packages..."
+  sudo cp -f "$I3_DIR/pacman.conf" /etc/ || handle_error "Failed to copy pacman.conf."
   sudo pacman -Sy --noconfirm "${PACMAN_PACKAGES[@]}" || handle_error "Failed to install pacman packages."
 }
 
@@ -59,30 +60,22 @@ install_paru_packages() {
   paru -Sy --noconfirm "${PARU_PACKAGES[@]}" || handle_error "Failed to install Paru packages."
 }
 
-setup_audio() {
-  echo "Setting audio volumes to 100%..."
-  pactl set-sink-volume @DEFAULT_SINK@ 100% || handle_error "Failed to set sink volume."
-  pactl set-source-volume @DEFAULT_SOURCE@ 100% || handle_error "Failed to set source volume."
-}
-
 configure_system() {
   echo "Copying configuration files..."
-  sudo cp -f "$I3_DIR/pacman.conf" /etc/ || handle_error "Failed to copy pacman.conf."
   sudo cp -f "$I3_DIR/nanorc" /etc/ || handle_error "Failed to copy nanorc."
   sudo cp -f "$I3_DIR/mkinitcpio.conf" /etc/ || handle_error "Failed to copy mkinitcpio.conf."
   sudo cp -f "$I3_DIR/grub" /etc/default/ || handle_error "Failed to copy grub configuration."
   sudo mkinitcpio -P || handle_error "Failed to regenerate initramfs."
   sudo grub-mkconfig -o "$GRUB_CONFIG" || handle_error "Failed to update GRUB configuration."
   sudo plymouth-set-default-theme -R loader_2 || handle_error "Failed to set Plymouth theme."
-  sudo cp -r "$I3_DIR/grub.cfg" "$GRUB_CONFIG" || handle_error "Failed to copy GRUB.cfg."
   sudo cp -r "$I3_DIR/.config" "$HOME/" || handle_error "Failed to copy .config directory."
-  sudo cp -r "$I3_DIR/.Xresources" "$HOME/" || handle_error "Failed to copy .Xresources."
+  sudo cp -r "$I3_DIR/.Xresources" "$HOME" || handle_error "Failed to copy .Xresources."
   xrdb -merge "$HOME/.Xresources" || handle_error "Failed to merge Xresources."
+  sudo chmod +x "$CONFIG_DIR/lang_tog.sh" || handle_error "Failed to set permissions for lang_tog.sh."
 }
 
 configure_spotify() {
   echo "Configuring Spotify..."
-  sudo chmod +x "$CONFIG_DIR/lang_tog.sh" || handle_error "Failed to set permissions for lang_tog.sh."
   sudo chmod a+wr /opt/spotify || handle_error "Failed to set permissions for Spotify."
   sudo chmod a+wr /opt/spotify/Apps -R || handle_error "Failed to set permissions for Spotify Apps directory."
   spicetify update || handle_error "Failed to update Spicetify."
@@ -94,6 +87,12 @@ cleanup_system() {
   sudo pacman -Sc --noconfirm || handle_error "Failed to clean package cache."
 }
 
+setup_audio() {
+  echo "Setting audio volumes to 100%..."
+  pactl set-sink-volume @DEFAULT_SINK@ 100% || handle_error "Failed to set sink volume."
+  pactl set-source-volume @DEFAULT_SOURCE@ 100% || handle_error "Failed to set source volume."
+}
+
 install_oh_my_bash() {
   echo "Installing Oh My Bash..."
   bash -c "$(curl -fsSL $OH_MY_BASH_INSTALL_URL)" || handle_error "Failed to install Oh My Bash."
@@ -103,10 +102,10 @@ install_oh_my_bash() {
 install_pacman_packages
 install_paru
 install_paru_packages
-setup_audio
 configure_system
 configure_spotify
 cleanup_system
+setup_audio
 install_oh_my_bash
 
 echo "Setup completed successfully!"
