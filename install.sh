@@ -70,7 +70,6 @@ configure_system() {
   sudo plymouth-set-default-theme -R loader_2 || handle_error "Failed to set Plymouth theme."
   sudo cp -r "$I3_DIR/.config" "$HOME/" || handle_error "Failed to copy .config directory."
   sudo cp -r "$I3_DIR/.Xresources" "$HOME" || handle_error "Failed to copy .Xresources."
-  xrdb -merge "$HOME/.Xresources" || handle_error "Failed to merge Xresources."
   sudo chmod +x "$CONFIG_DIR/lang_tog.sh" || handle_error "Failed to set permissions for lang_tog.sh."
 }
 
@@ -78,7 +77,7 @@ configure_spotify() {
   echo "Configuring Spotify..."
   sudo chmod a+wr /opt/spotify || handle_error "Failed to set permissions for Spotify."
   sudo chmod a+wr /opt/spotify/Apps -R || handle_error "Failed to set permissions for Spotify Apps directory."
-  spicetify update || handle_error "Failed to update Spicetify."
+  sudo spicetify update || handle_error "Failed to update Spicetify."
 }
 
 cleanup_system() {
