@@ -9,7 +9,7 @@ PACMAN_PACKAGES=(
   "alacritty" "thunar" "polybar" "rofi" "feh" "plymouth"
 
   # Fonts and extras
-  "ttf-sourcecodepro-nerd" "steam"
+  "ttf-sourcecodepro-nerd"
 )
 
 PARU_PACKAGES=(
@@ -20,10 +20,10 @@ PARU_PACKAGES=(
   "bibata-cursor-theme-bin" "gruvbox-gtk-theme-git" "gruvbox-icon-theme-git"
 
   # Applications
-  "google-chrome" "spotify" "vesktop-bin" "gscreenshot"
+  "google-chrome" "gscreenshot"
 
   # System enhancements
-  "spicetify-cli" "plymouth-theme-loader-2-git"
+  "plymouth-theme-loader-2-git"
 
   # Window manager utilities
   "i3-rounded-border-patch-git" "i3-auto-tiling" "picom-simpleanims-next-git"
@@ -73,13 +73,6 @@ configure_system() {
   sudo chmod +x "$CONFIG_DIR/lang_tog.sh" || handle_error "Failed to set permissions for lang_tog.sh."
 }
 
-configure_spotify() {
-  echo "Configuring Spotify..."
-  sudo chmod a+wr /opt/spotify || handle_error "Failed to set permissions for Spotify."
-  sudo chmod a+wr /opt/spotify/Apps -R || handle_error "Failed to set permissions for Spotify Apps directory."
-  sudo spicetify update || handle_error "Failed to update Spicetify."
-}
-
 cleanup_system() {
   echo "Cleaning up the system..."
   sudo pacman -Rns $(pacman -Qdtq) --noconfirm || handle_error "Failed to remove unused packages."
@@ -102,7 +95,6 @@ install_pacman_packages
 install_paru
 install_paru_packages
 configure_system
-configure_spotify
 cleanup_system
 setup_audio
 install_oh_my_bash
