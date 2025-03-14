@@ -1,6 +1,8 @@
 ##############
 ### CONFIG ###
 ##############
+exec pactl set-sink-volume @DEFAULT_SINK@ 100%
+exec pactl set-source-volume @DEFAULT_SOURCE@ 100%
 exec_always bash ~/i3/finisher.sh
 exec_always feh --bg-scale ~/.config/background/bg.png
 exec_always killall polybar

@@ -79,12 +79,6 @@ cleanup_system() {
   sudo pacman -Sc --noconfirm || handle_error "Failed to clean package cache."
 }
 
-setup_audio() {
-  echo "Setting audio volumes to 100%..."
-  pactl set-sink-volume @DEFAULT_SINK@ 100% || handle_error "Failed to set sink volume."
-  pactl set-source-volume @DEFAULT_SOURCE@ 100% || handle_error "Failed to set source volume."
-}
-
 install_oh_my_bash() {
   echo "Installing Oh My Bash..."
   bash -c "$(curl -fsSL $OH_MY_BASH_INSTALL_URL)" || handle_error "Failed to install Oh My Bash."
@@ -96,7 +90,6 @@ install_paru
 install_paru_packages
 configure_system
 cleanup_system
-setup_audio
 install_oh_my_bash
 
 echo "Setup completed successfully!"
