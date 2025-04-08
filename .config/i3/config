@@ -37,16 +37,6 @@ bindsym $mod+$smod+Down  move down
 bindsym $mod+$smod+Up    move up
 bindsym $mod+$smod+Right move right
 
-### Binds ###
-
-# Terminal 
-bindsym $mod+Return exec alacritty
-
-# App launcher binds
-bindsym $mod+d exec rofi -show drun -theme $HOME/.config/rofi/style.rasi 
-bindsym $mod+$smod+d exec rofi -show run -theme $HOME/.config/rofi/style.rasi 
-bindsym $mod+Tab exec rofi -show window -theme $HOME/.config/rofi/style.rasi 
-
 # System binds
 bindsym $mod+$smod+q kill
 bindsym $mod+$smod+r restart
@@ -56,6 +46,16 @@ bindsym $mod+v split h
 bindsym $mod+$smod+f floating toggle
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+### Binds ###
+
+# Terminal 
+bindsym $mod+Return exec alacritty
+
+# App launcher binds
+bindsym $mod+d exec rofi -show drun -theme $HOME/.config/rofi/style.rasi 
+bindsym $mod+$smod+d exec rofi -show run -theme $HOME/.config/rofi/style.rasi 
+bindsym $mod+Tab exec rofi -show window -theme $HOME/.config/rofi/style.rasi 
 
 # Language change
 bindsym $mod+slash exec ~/.config/lang_tog.sh
@@ -71,19 +71,7 @@ bindsym $mod+$smod+comma exec pactl set-source-volume @DEFAULT_SOURCE@ -5%
 bindsym $mod+m exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym $mod+$smod+m exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-# Names of wirkspace
-#set $ws1 1:"I"
-#set $ws2 2:"II"
-#set $ws3 3;"III"
-#set $ws4 4:"IV"
-#set $ws5 5:"V"
-#set $ws6 6:"VI"
-#set $ws7 7:"VII"
-#set $ws8 8:"VIII"
-#set $ws9 9:"IX"
-#set $ws10 10:"X"
-
-# Switch to workspace n
+# Switch and move focused container to workspace n
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -94,8 +82,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-
-# Move focused container to workspace n
 bindsym $mod+$smod+1 move container to workspace 1
 bindsym $mod+$smod+2 move container to workspace 2
 bindsym $mod+$smod+3 move container to workspace 3
