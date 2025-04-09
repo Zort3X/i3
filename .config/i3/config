@@ -1,22 +1,21 @@
 ##############
 ### CONFIG ###
 ##############
+exec --no-startup-id xrandr --output eDP --mode 1920x1080
 exec pactl set-sink-volume @DEFAULT_SINK@ 100%
 exec pactl set-source-volume @DEFAULT_SOURCE@ 100%
-exec_always bash ~/i3/finisher.sh
 exec_always feh --bg-scale ~/.config/background/bg.png
 exec_always killall polybar
 exec_always --no-startup-id bash ~/.config/polybar/launch_polybar.sh
-exec --no-startup-id xrandr --output eDP --mode 1920x1080
 exec_always --no-startup-id picom 
 exec_always --no-startup-id i3-auto-tiling
+
+font pango:SauceCodeProNerdFont 14
 
 gaps inner 15
 gaps outer 5
 default_border pixel 2
 default_floating_border pixel 2
-
-font pango:SauceCodeProNerdFont 14
 
 set $mod                             Mod4
 set $smod                            Shift
