@@ -17,37 +17,27 @@ The goal of this project was to move away from windows and bloated, pre-configur
 
 ---
 
-## 🛠️ Tech Stack & Components
-
-| Component | Software Used | Description |
-| :--- | :--- | :--- |
-| **OS** | Arch Linux | Lightweight, bleeding-edge Linux distribution. |
-| **WM** | i3-gaps / i3wm | Tiling window manager (with gaps for aesthetics). |
-| **Bar** | Polybar / i3status | Highly customizable status bar showing system metrics. |
-| **Terminal** | Alacritty / Kitty | GPU-accelerated terminal emulator. |
-| **Shell** | Zsh + Oh My Zsh | Enhanced shell with syntax highlighting and autocompletions. |
-| **Application Launcher** | Rofi / dmenu | Keyboard-driven application menu and runner. |
-| **Notifications** | Dunst | Lightweight notification daemon. |
-| **Compositor** | Picom | Handles window transparency, shadows, and fading animations. |
-
----
-
 ## ⌨️ Keybindings Quick Reference
 The system relies heavily on the **Mod key** (configured to the `Super`/`Windows` key).
 
 * `Mod + Enter` ➡️ Open Terminal
 * `Mod + d` ➡️ Open Rofi (App Launcher)
 * `Mod + Shift + q` ➡️ Close Focused Window
-* `Mod + Arrow Keys` (or `hjkl`) ➡️ Navigate between windows
+* `Mod + Arrow Keys` ➡️ Navigate between windows
 * `Mod + Shift + e` ➡️ Exit i3 / Log out
 
 ---
 
 ## 🚀 Installation & Deployment
 
-> [!WARNING]
-> These dotfiles are tailored specifically for my hardware configuration. Backup your existing configurations before running any install scripts.
+> [!IMPORTANT]
+> **Project Pivot Note:** The automatic installation scripts were deprecated and removed. I have since migrated my primary workflows to **Wayland** (using **Sway** as a modern drop-in replacement for i3, and **Hyprland** depending on the machine). 
+> 
+> As a result, these specific i3 files are preserved here as a snapshot of my stable X11 configuration. They are intended to be audited and copied manually.
 
+### 📁 Manual Installation
+
+Because hardware configurations vary, it is highly recommended to manually copy only the configurations you need into your `$HOME/.config/` directory.
 ### Prerequisite
 Ensure you have a fresh installation of Arch Linux with a display server (Xorg) installed.
 
