@@ -7,22 +7,13 @@
 ## 📖 Project Overview
 This repository contains my final school project: a fully customized, optimized, and visually cohesive desktop environment built from scratch on **Arch Linux** using the **i3 window manager (i3wm)**. 
 
-The goal of this project was to move away from bloated, pre-configured desktop environments (like GNOME or KDE) to build a minimal, keyboard-driven workflow that maximizes system resource efficiency and developer productivity.
+The goal of this project was to move away from windows and bloated, pre-configured desktop environments (like GNOME or KDE) to build a minimal, keyboard-driven workflow that maximizes system resource efficiency and developer productivity.
 
 ### 🎯 Key Objectives
 * **Minimalism & Efficiency:** Idle RAM usage kept under 400MB.
 * **Keyboard-Driven Workflow:** Tiling window management to eliminate mouse dependency.
 * **Aesthetic Cohesion:** A strict, dark-mode color palette applied across all system applications.
 * **Automation:** Dotfiles organized and easily deployable via a setup script.
-
----
-
-## 📸 Screenshots
-*(Pro-tip: Take a screenshot of your clean desktop and another with several windows open, save them in a `screenshots/` folder, and link them here!)*
-
-| Clean Desktop | Working Desktop |
-| :---: | :---: |
-| ![Clean Setup](screenshots/clean.png) | ![Busy Setup](screenshots/dirty.png) |
 
 ---
 
