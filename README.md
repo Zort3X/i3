@@ -1,6 +1,5 @@
 # 🏔️ Arch Linux + i3wm Rice: Custom Desktop Environment
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Arch Linux](https://img.shields.io/badge/OS-Arch%20Linux-blue?logo=arch-linux)](https://archlinux.org/)
 [![Window Manager](https://img.shields.io/badge/WM-i3wm-lightgrey?logo=i3)](https://i3wm.org/)
 
