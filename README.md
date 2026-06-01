@@ -9,12 +9,6 @@ This repository contains my final school project: a fully customized, optimized,
 
 The goal of this project was to move away from windows and bloated, pre-configured desktop environments (like GNOME or KDE) to build a minimal, keyboard-driven workflow that maximizes system resource efficiency and developer productivity.
 
-### 🎯 Key Objectives
-* **Minimalism & Efficiency:** Idle RAM usage kept under 400MB.
-* **Keyboard-Driven Workflow:** Tiling window management to eliminate mouse dependency.
-* **Aesthetic Cohesion:** A strict, dark-mode color palette applied across all system applications.
-* **Automation:** Dotfiles organized and easily deployable via a setup script.
-
 ---
 
 ## ⌨️ Keybindings Quick Reference
@@ -25,6 +19,15 @@ The system relies heavily on the **Mod key** (configured to the `Super`/`Windows
 * `Mod + Shift + q` ➡️ Close Focused Window
 * `Mod + Arrow Keys` ➡️ Navigate between windows
 * `Mod + Shift + e` ➡️ Exit i3 / Log out
+
+---
+
+## 🗄️ Repository Status & Academic Archive
+
+> [!NOTE]
+> **This repository is historically frozen and kept for two primary purposes:**
+> 1. **Academic Compliance:** Per school requirements, this project is preserved and will remain accessible for $X$ years to ensure grading verification and reproducibility if revisited by examiners.
+> 2. **Personal Reference Archive:** This repo serves as a snapshot of my first major Linux configuration milestone. I maintain it to track my personal growth as a developer, reference stable X11 configurations, and compare my past workflows against my current setups.
 
 ---
 
